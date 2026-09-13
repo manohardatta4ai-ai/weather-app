@@ -1,0 +1,37 @@
+:root { --ink:#1b2930; --muted:#5d6e72; --paper:#f5f1e9; --line:#d9ded8; --sun:#f4a340; --white:#fffdf8; }
+* { box-sizing:border-box; }
+body { margin:0; color:var(--ink); background:radial-gradient(circle at 78% 8%, #f8d99d 0 11%, transparent 30%), linear-gradient(135deg,#e5f0ec 0%,var(--paper) 54%,#f2d9bd 100%); min-height:100vh; font-family:'Trebuchet MS',sans-serif; }
+main { width:min(1120px,calc(100% - 40px)); margin:auto; padding:32px 0 48px; }
+header { display:flex; justify-content:space-between; align-items:center; margin-bottom:72px; }
+.brand { font:700 1.25rem 'Trebuchet MS',sans-serif; letter-spacing:.02em; }
+.brand span { color:#cb7439; }
+.eyebrow { font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); }
+.intro { max-width:690px; margin-bottom:36px; }
+h1 { font:600 clamp(2.7rem,7vw,5.7rem)/.98 'Trebuchet MS',sans-serif; letter-spacing:-.055em; margin:12px 0 22px; }
+.intro p { color:var(--muted); font-size:1.05rem; max-width:470px; line-height:1.65; margin:0; }
+form { display:flex; gap:10px; max-width:610px; margin:30px 0 34px; }
+input { border:1px solid #cbd5d0; background:rgba(255,253,248,.78); color:var(--ink); border-radius:8px; font:500 1rem 'Trebuchet MS',sans-serif; padding:15px 17px; flex:1; min-width:0; outline:none; }
+input:focus { border-color:#bd7539; box-shadow:0 0 0 3px rgba(189,117,57,.15); }
+button { border:0; border-radius:8px; background:var(--ink); color:var(--white); font:700 .93rem 'Trebuchet MS',sans-serif; padding:0 25px; cursor:pointer; transition:transform .2s,background .2s; }
+button:hover { background:#cb7439; transform:translateY(-2px); }
+button:disabled { opacity:.6; cursor:wait; transform:none; }
+.status { color:#a24f35; min-height:24px; font-size:.9rem; }
+.weather { display:none; grid-template-columns:1.15fr .85fr; gap:1px; background:var(--line); border:1px solid var(--line); border-radius:16px; overflow:hidden; box-shadow:0 20px 60px rgba(44,55,52,.1); }
+.weather.visible { display:grid; animation:rise .55s ease both; }
+.current, .details { background:rgba(255,253,248,.82); padding:34px; }
+.current { background:linear-gradient(135deg,rgba(190,228,224,.9),rgba(255,253,248,.9)); }
+.place { font:600 1.7rem 'Trebuchet MS',sans-serif; margin:8px 0 4px; }
+.date { color:var(--muted); font-size:.88rem; }
+.temperature { display:flex; align-items:center; gap:18px; margin:40px 0 25px; }
+.temp { font:600 clamp(4.2rem,10vw,7rem)/.8 'Space Grotesk',sans-serif; letter-spacing:-.08em; }
+.degree { font-size:2rem; vertical-align:top; }
+.weather-icon { font-size:4.5rem; }
+.summary { font-size:1.15rem; text-transform:capitalize; }
+.details h2 { font:600 1.05rem 'Trebuchet MS',sans-serif; margin:0 0 24px; }
+.metrics { display:grid; grid-template-columns:1fr 1fr; gap:18px 24px; }
+.metric { border-top:1px solid var(--line); padding-top:13px; }
+.metric label { display:block; color:var(--muted); font-size:.78rem; margin-bottom:7px; }
+.metric strong { font:600 1.35rem 'Trebuchet MS',sans-serif; }
+footer { color:var(--muted); font-size:.78rem; margin-top:24px; }
+@keyframes rise { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:none; } }
+@media (max-width:680px) { main { width:min(100% - 28px,560px); padding-top:22px; } header { margin-bottom:60px; } form { flex-direction:column; } button { min-height:52px; } .weather { grid-template-columns:1fr; } .current,.details { padding:25px; } }

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Skyline Weather</title>
+	<link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+	<main>
+		<header><div class="brand">skyline<span>/</span>weather</div><div class="eyebrow">Live conditions</div></header>
+		<section class="intro">
+			<div class="eyebrow">Forecast, simplified</div>
+			<h1>Read the sky<br>before you step out.</h1>
+			<p>Search any city for a clear snapshot of the weather right now, powered by OpenWeather.</p>
+		</section>
+		<form id="search-form"><input id="city" name="city" placeholder="Try London, Tokyo, or Nairobi" autocomplete="off" required><button id="search">Check weather</button></form>
+		<div id="status" class="status" role="status"></div>
+		<section id="weather" class="weather" aria-live="polite">
+			<div class="current"><div class="eyebrow">Current conditions</div><div id="place" class="place"></div><div id="date" class="date"></div><div class="temperature"><div id="icon" class="weather-icon"></div><div id="temp" class="temp"></div><span class="degree">°C</span></div><div id="summary" class="summary"></div></div>
+			<div class="details"><h2>At a glance</h2><div class="metrics"><div class="metric"><label>Feels like</label><strong id="feels"></strong></div><div class="metric"><label>Humidity</label><strong id="humidity"></strong></div><div class="metric"><label>Wind</label><strong id="wind"></strong></div><div class="metric"><label>Pressure</label><strong id="pressure"></strong></div><div class="metric"><label>Visibility</label><strong id="visibility"></strong></div><div class="metric"><label>Cloud cover</label><strong id="clouds"></strong></div></div></div>
+		</section>
+		<footer>Data from OpenWeather. Temperatures shown in Celsius.</footer>
+	</main>
+	<script src="/static/app.js"></script>
+</body>
+</html>
